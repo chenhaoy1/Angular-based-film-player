@@ -1,0 +1,49 @@
+img
+{
+
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   margin: auto;
+}
+
+ngb-carousel {
+  max-width: 1130px;
+  margin: auto;
+  outline: 0px;
+  padding-left: 4%;
+  padding-right: 4%
+}
+.window-overlay{
+  color:white;
+  left: 0;
+  padding-left: 8%;
+  top: 0%;
+  bottom: 0;
+  right: 0;
+  font-size: 21px;
+
+}
+.window .window-overlay {
+  background: linear-gradient(transparent 0%, black);
+  position: absolute;
+
+  opacity: 0;
+}
+
+.window:hover .window-overlay{
+  opacity: 1;
+}
+.window:hover .myDiv{
+  transform: scale(1.1);
+}
+.window{
+  transition: transform .2s;
+  max-height: 400px;
+}
+
+.dropdown-menu{
+  background-color:#050a30;
+
+}
+

@@ -1,0 +1,134 @@
+<app-navbar [active]="['active', '']"> </app-navbar>
+<ngbd-carousel-pause [data]="nowplaying"></ngbd-carousel-pause>
+
+
+<div style='max-width: 1600px; margin:auto' *ngIf='local.length && mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Continue Watching</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='local.length && mb'>
+  <div class="container-fluid" style="padding-left:14%;padding-right:14%;" >
+    <p style='font-weight: 600; font-size:40px'>Continue Watching</p>
+  </div>
+</div>
+
+<div *ngIf='local.length<=6 && local.length > 0 && mb == false' class='container-fluid' style='max-width:1520px;margin:auto; margin-top: 2%; margin-bottom: 4%;'>
+  <div class = "row" style=" max-height: 300px; max-width:85%;margin:auto;padding-top:10px; padding-bottom:4%"  *ngFor="let d of localdata[0]" >
+    <div class = "col-2" *ngFor="let i of d">
+      <a  href="{{i.web}}" ref ='nofollow noopener noreferrer' style="max-width: 171px; margin: auto;">
+        <img class='myDiv' style = "margin-bottom:10px;max-width: 100%;height:auto;" src="{{i.poster}}">
+        <div class="window-overlay">
+          <div style="bottom:5%; position: absolute; left:8%"> {{i.title}} </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class='container-fluid' *ngIf='local.length > 6 && mb == false'>
+  <app-continue></app-continue>
+</div>
+
+<div class='container-fluid' *ngIf='mb && local.length'>
+  <app-continue></app-continue>
+</div>
+
+
+
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Popular Movies</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb'>
+  <div class="container-fluid  " style=" padding-left:14%" >
+    <p style='font-weight: 600; font-size:40px'>Popular Movies</p>
+  </div>
+</div>
+
+<div class='container-fluid'>
+  <app-listcard [data]="popularmv"></app-listcard>
+</div>
+<div style='max-width: 1600px; margin:auto' *ngIf='mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Top Rated Movies</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb'>
+  <div class="container-fluid " style="padding-left:14%" >
+    <p style='font-weight: 600; font-size:40px'>Top Rated Movies</p>
+  </div>
+</div>
+
+<div class='container-fluid'>
+  <app-listcard [data]="topratedmv"></app-listcard>
+</div>
+
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Trending Movies</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb'>
+  <div class="container-fluid" style="padding-left:14%" >
+    <p style='font-weight: 600; font-size:40px'>Trending Movies</p>
+  </div>
+</div>
+<div class='container-fluid'>
+  <app-listcard [data]="trendingmv"></app-listcard>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Popular TV Shows</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf=' mb'>
+  <div class="container-fluid " style="text-align: center;" >
+    <p style='font-weight: 600; font-size:40px'>Popular TV Shows</p>
+  </div>
+</div>
+<div class='container-fluid'>
+  <app-listcardtv [data]="populartv"></app-listcardtv>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Top Rated TV Shows</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf='mb'>
+  <div class="container-fluid " style="padding-left:14%" >
+    <p style='font-weight: 600; font-size:40px'>Top Rated TV Shows</p>
+  </div>
+</div>
+<div class='container-fluid'>
+  <app-listcardtv [data]="topratedtv"></app-listcardtv>
+</div>
+
+
+
+<div style='max-width: 1600px; margin:auto' *ngIf=' mb==false' >
+  <div class="container-fluid pt-2 " style="padding-left:8%;padding-right:8%;" >
+    <h1>Trending TV Shows</h1>
+  </div>
+</div>
+
+<div style='max-width: 1600px; margin:auto' *ngIf=' mb'>
+  <div class="container-fluid  " style="padding-left:14%" >
+    <p style='font-weight: 600; font-size:40px'>Trending TV Shows</p>
+  </div>
+</div>
+<div class='container-fluid'>
+  <app-listcardtv [data]="trendingtv"></app-listcardtv>
+</div>
+<app-footer class="mt-auto"></app-footer>

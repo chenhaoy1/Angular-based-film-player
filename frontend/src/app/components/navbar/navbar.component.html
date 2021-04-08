@@ -1,0 +1,59 @@
+
+<ng-template #rt let-r="result" let-t="term">
+
+  <a  id='link' href='watch/{{r.media_type}}/{{r.id}}'>
+    <div style='margin-left:-1%'>
+      <img [src]="'https://image.tmdb.org/t/p/original' + r['backdrop_path']"  style="width: 70px;">
+      <ngb-highlight style='color: white !important;margin-left:2%;margin-right:-5px'[result]="r.name" [term]="t"></ngb-highlight>
+    </div>
+  </a>
+</ng-template>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top " style="background-color: #010c20;" *ngIf='mb == false'>
+  <a class="navbar-brand pl-4" href="#" >USC Films</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item px-1 {{active[0]}}">
+        <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item px-1 {{active[1]}}">
+        <a class="nav-link " href="/mylist">My List</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0 " style='margin-right:4%'>
+      <input id="typeahead-http" type="text" class="form-control mx-sm-2" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [inputFormatter]="formatter" [resultTemplate]='rt' style = "background-color: #010c20; outline: 0px !important; border: none; border-bottom: solid 2px white; border-radius: 0px;"/>
+    </form>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top " style="background-color: #010c20;" *ngIf='mb'>
+  <a class="navbar-brand pl-4" href="#" >USC Films</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" style='margin-right:30px;'>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style='float: right;'>
+        <li class="nav-item px-1 {{active[0]}}" style='margin-right: 40px;'>
+          <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item px-1 {{active[1]}}">
+          <a class="nav-link " href="/mylist">My List</a>
+        </li>
+      </ul>
+
+    <div style='width:270px; margin-top:100px; margin-left:30px'>
+      <form class="form-inline my-2 my-lg-0 " style='margin-right:4%'>
+        <input id="typeahead-http" type="text" class="form-control mx-sm-2" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [inputFormatter]="formatter" [resultTemplate]='rt' style = "background-color: #010c20; outline: 0px !important; border: none; border-bottom: solid 2px white; border-radius: 0px;"/>
+      </form>
+    </div>
+  </div>
+</nav>

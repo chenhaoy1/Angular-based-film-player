@@ -1,0 +1,44 @@
+<ngb-carousel [interval]=0 style="margin: auto; padding-bottom: 60px;" *ngIf='mb==false'>
+  <ng-template ngbSlide *ngFor="let d of data[0]; index as i" >
+    <div class = "row" style="max-width: 85%; margin:auto;max-height: 300px; margin-top: 10px; padding-top:10px">
+      <div class = "col-2" *ngFor="let i of d">
+
+        <a href="{{i.web}}" rel="nofollow noopener noreferrer" style="max-width: 171px; margin: auto;">
+
+          <img class="myDiv" style = "margin-bottom:10px;max-width: 100%;height:auto; z-index: 10; position: relative;" src="{{i.poster}}">
+          <div class="window-overlay">
+            <div style="bottom:9%; position: absolute; left:8%"> {{i.title}} </div>
+          </div>
+
+
+        </a>
+
+      </div>
+
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+
+
+<ngb-carousel [interval]=0 [showNavigationIndicators]="false" style="margin: auto; padding-bottom: 30px; padding-left:5%;padding-right:5%" *ngIf='mb'>
+  <ng-template ngbSlide *ngFor="let i of data[1]">
+    <div class = "row" style=" max-width: 80%;margin:auto; margin-top: 10px; padding-top:10px">
+      <div class = "col-12" >
+
+        <a href="{{i.web}}" rel="nofollow noopener noreferrer" style="max-width: 171px; margin: auto;">
+
+          <img class="myDiv" style = "margin-bottom:10px;max-width: 100%;height:auto; z-index: 10; position: relative;" src="{{i.poster}}">
+          <div class="window-overlay" style='opacity: 1;left:5%;right:5% '>
+            <div style="bottom:4%; position: absolute; left:8%"> {{i.title}} </div>
+          </div>
+
+
+        </a>
+
+      </div>
+
+    </div>
+  </ng-template>
+
+</ngb-carousel>

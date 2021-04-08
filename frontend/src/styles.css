@@ -1,0 +1,40 @@
+body {
+  background-color: #050a30;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar {
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+  background-image: linear-gradient(to left, #aaaaaa, #050a30 25%, #050a30 75%, #aaaaaa 100%);
+
+}
+
+*::-webkit-scrollbar-track:horizontal {
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+  background-image: linear-gradient(to bottom, #aaaaaa, #050a30 25%, #050a30 75%, #aaaaaa 100%);
+
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb:horizontal {
+  background-color: #aaaaaa;
+  border-radius: 6px;
+}
+
+.dropdown-menu{
+  background-color:#050a30 !important;
+  border: 1px solid white  !important;
+}

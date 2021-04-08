@@ -1,0 +1,39 @@
+<app-navbar [active]="['','active']"> </app-navbar>
+<div class='container' style='margin:auto;padding-top:2%;padding-left:2%;padding-right:2%; min-height: 90vh;' *ngIf='local.length && mb==false'>
+    <div style='padding-bottom: 4%'><h1>My WatchList</h1></div>
+    <div class = "row" style=" max-height: 300px; margin:auto;padding-top:10px; padding-bottom:5%"  *ngFor="let d of data[0]" >
+      <div class = "col-2" *ngFor="let i of d">
+        <a  href="{{i.web}}" ref ='nofollow noopener noreferrer' style="max-width: 2000px; margin: auto;">
+          <img class='myDiv' style = "margin-bottom:10px;max-width: 100%;height:auto;" src="{{i.poster}}">
+          <div class="window-overlay">
+            <div style="bottom:4%; position: absolute; left:8%"> {{i.title}}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+</div>
+
+<div class='container' style='margin:auto;padding-top:2%;padding-left:5%;padding-right:5%; min-height: 90vh;' *ngIf='local.length && mb'>
+  <div style='padding-bottom: 10%; padding-left:9%'><h1>My WatchList</h1></div>
+  <div class = "row" style=" max-width: 80%; margin:auto;padding-top:10px;"   >
+    <div class = "col-12" *ngFor="let i of data[1]" style='margin-bottom: 20%;'>
+      <a  href="{{i.web}}" ref ='nofollow noopener noreferrer' style="max-width: 171px; margin: auto;">
+        <img class='myDiv' style = "margin-bottom:10px;max-width: 100%;height:auto;" src="{{i.poster}}">
+        <div class="window-overlay" style='opacity: 1;left:5%;right:5%;bottom:-0% '>
+          <div style="bottom:4%; position: absolute; left:8%"> {{i.title}}</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class='container' *ngIf='local.length==0 && mb==false' style='text-align: center; min-height: 90vh;padding-top:5%'>
+  <h1>No items found in Watchlist.</h1>
+</div>
+<div class='container' *ngIf='local.length==0 && mb' style='text-align: center; min-height: 80vh;padding-top:10%'>
+  <h1>No items found in Watchlist.</h1>
+</div>
+
+
+
+<app-footer class="mt-auto"></app-footer>
